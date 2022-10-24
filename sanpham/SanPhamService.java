@@ -23,7 +23,29 @@ public class SanPhamService {
     }
 
 
-    public void xoaSanPham() {
+    public void xoaSanPham(String id) {
+        for (int i = 0; i < sanPhams.length; i++) {
+            if (sanPhams[i].getId().equals(id)){
+                sanPhams[i] = null;
+                System.out.println("xóa thành công");
+            }
+        }
+        Arrays.stream(sanPhams).forEach(e ->{
+            if(e != null)  System.out.println(e);
+        });
+    }
+
+    public void capNhatsoLuong() {
+        System.out.println("nhập Id sản phẩm cần cập nhật");
+        String id = sc.nextLine();
+        System.out.println("nhập số lượng cần cập nhật");
+        int soLuongMoi = sc.nextInt();
+        for (int i = 0; i < sanPhams.length; i++) {
+            if (sanPhams[i].getId().equals(id)){
+                sanPhams[i].setSoLuong(soLuongMoi);
+                System.out.println("update thành công!");
+            }
+        }
     }
 
     public void timKiemTheoTen() {

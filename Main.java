@@ -32,9 +32,10 @@ public class Main {
                         int menu2 = sc.nextInt();
                         switch (menu2) {
                             case 1:
-                                sanPhamService.xoaSanPham();
+                                sanPhamService.xoaSanPham(sc.nextLine());
                                 break;
                             case 2:
+                                sanPhamService.capNhatsoLuong();
                             break;
                         }
                         break;
